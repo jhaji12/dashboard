@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Flex } from "@chakra-ui/react";
+import Dashboard from "./Views/Dashboard";
+import { AppBar } from "./Containers/AppBar";
+import SideBar from "./Containers/SideBar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box minH="100vh">
+      <AppBar />
+      <Flex>
+        <SideBar />
+        <Flex flexGrow={1}>
+          <Dashboard />
+        </Flex>
+      </Flex>
+    </Box>
   );
-}
+};
 
 export default App;
